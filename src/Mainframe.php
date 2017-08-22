@@ -2,7 +2,9 @@
 
 namespace Aubruz\Mainframe;
 
+use GuzzleHttp\Psr7;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 
 /**
@@ -55,12 +57,19 @@ class Mainframe
      */
     public function sendMessage($conversationID, $message = '')
     {
-        $this->client->request('POST', 'send_message', [
-            'headers'   => $this->headers,
-            'json'      => [
-                'conversation_id'   => $conversationID,
-                'message'           => $message,
-            ]
-        ]);
+        try {
+            $this->client->request('POST', 'send_message', [
+                'headers' => $this->headers,
+                'json' => [
+                    'conversation_id' => $conversationID,
+                    'message' => $message,
+                ]
+            ]);
+        }catch (RequestException $e) {
+            echo Psr7\str($e->getRequest());
+            if ($e->hasResponse()) {
+                echo Psr7\str($e->getResponse());
+            }
+        }
     }
 }
