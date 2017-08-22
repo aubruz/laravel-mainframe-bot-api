@@ -1,18 +1,20 @@
 {
-  "name": "aubruz/laravel-mainframe-bot-api",
+  "name": "aubruz/mainframe-bot-api",
   "description": "API to communicate with the mainframe bot api easily",
   "keywords": [
     "mainframe",
-    "laravel",
     "api",
     "bot"
   ],
-  "homepage": "https://github.com/aubruz/laravel-mainframe-bot-api",
+  "homepage": "https://github.com/aubruz/mainframe-bot-api",
   "license": "MIT",
   "authors": [
     {
       "name": "Aubry",
       "role": "Developer"
     }
-  ]
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
+  }
 }
