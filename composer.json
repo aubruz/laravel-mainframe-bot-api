@@ -1,5 +1,5 @@
 {
-  "name": "Laravel Mainframe Bot API",
+  "name": "aubruz/laravel-mainframe-bot-api",
   "description": "API to communicate with the mainframe bot api easily",
   "keywords": [
     "mainframe",
