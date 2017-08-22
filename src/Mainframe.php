@@ -32,7 +32,7 @@ class Mainframe
     /**
      * @var array
      */
-    private $headers = array();
+    private $headers;
 
     /**
      * Mainframe constructor.
@@ -44,7 +44,6 @@ class Mainframe
         $this->botSecret = $botSecret;
         $this->baseUri = $baseUri;
         $this->client = new Client(['base_uri' => $baseUri]);
-
         $this->headers = [
             'Authorization'     => 'Mainframe-Bot ' . $botSecret,
             'Content-Type'      => ['application/json', 'charset=utf-8']
@@ -58,7 +57,7 @@ class Mainframe
     public function sendMessage($conversationID, $message = '')
     {
         try {
-            $this->client->request('POST', 'send_message', [
+            return $this->client->request('POST', 'send_message', [
                 'headers' => $this->headers,
                 'json' => [
                     'conversation_id' => $conversationID,
@@ -66,10 +65,7 @@ class Mainframe
                 ]
             ]);
         }catch (RequestException $e) {
-            echo Psr7\str($e->getRequest());
-            if ($e->hasResponse()) {
-                echo Psr7\str($e->getResponse());
-            }
+            return $e;
         }
     }
 }
