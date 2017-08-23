@@ -3,26 +3,64 @@
 namespace Aubruz\Mainframe\UI;
 
 
+/**
+ * Class Button
+ * @package Aubruz\Mainframe\UI
+ */
 class Button extends Component
 {
 
     /**
      * Button constructor.
      * @param $title
-     * @param string $payload
-     * @param string $style
-     * @param string $type
      */
-    function __construct($title, $payload = '', $style = 'primary', $type = 'post_payload' )
+    function __construct($title)
     {
         $this->json = [
             "title" => $title,
-            "type"  => $type,
-            "style" => $style,
-            "payload"   => [
-                "type"      => $payload
-            ]
+            "type"  => 'post_payload',
+            "style" => 'primary',
         ];
+        return $this;
+    }
+
+    /**
+     * @param $url
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->json["url"] = $url;
+        return $this;
+    }
+
+    /**
+     * @param $style
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->json["style"] = $style;
+        return $this;
+    }
+
+    /**
+     * @param $payload
+     * @return $this
+     */
+    public function setPayload($payload)
+    {
+        $this->json["payload"] = $payload;
+        return $this;
+    }
+
+    /**
+     * @param $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->json["type"] = $type;
         return $this;
     }
 }
