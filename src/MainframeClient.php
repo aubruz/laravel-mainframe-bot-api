@@ -94,6 +94,20 @@ class MainframeClient
         return $this->makeCall('POST', 'edit_subscription', $json);
     }
 
+    public function deleteSubscription($conversationID, $subscriptionID, $message = null)
+    {
+        $json = [
+            'conversation_id'   => $conversationID,
+            'subscription_id'   => $subscriptionID,
+        ];
+
+        if($message){
+            $json['message'] = $message;
+        }
+
+        return $this->makeCall('POST', 'delete_subscription', $json);
+    }
+
     /**
      * @param $verb
      * @param $endpoint
