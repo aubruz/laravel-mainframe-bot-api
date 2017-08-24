@@ -34,7 +34,7 @@ class BotResponse extends ArrayType
     }
 
     /**
-     * @param  ModalData|EmbedData|AuthentificationData $data
+     * @param  ModalData|EmbedData|AuthenticationData $data
      * @return $this
      */
     public function addData($data)

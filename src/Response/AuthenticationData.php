@@ -5,10 +5,10 @@ namespace Aubruz\Mainframe\Response;
 use Aubruz\Mainframe\ArrayType;
 
 /**
- * Class AuthentificationData
+ * Class AuthenticationData
  * @package Aubruz\Mainframe\Response
  */
-class AuthentificationData extends ArrayType
+class AuthenticationData extends ArrayType
 {
 
     public function __construct($url, $type = 'authentication')
