@@ -7,7 +7,7 @@ namespace Aubruz\Mainframe\UI;
  * Class Button
  * @package Aubruz\Mainframe\UI
  */
-class Button extends Component
+class Button extends ArrayType
 {
 
     /**

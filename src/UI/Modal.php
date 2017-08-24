@@ -3,57 +3,44 @@
 namespace Aubruz\Mainframe\UI;
 
 
-class Modal
+/**
+ * Class Modal
+ * @package Aubruz\Mainframe\UI
+ */
+class Modal extends ArrayType
 {
-    /**
-     * @var array
-     */
-    private $json;
 
     /**
      * Modal constructor.
      * @param string $title
      */
-    function __construct($title = '')
+    public function __construct($title = '')
     {
         $this->json = [
             'type'  => 'modal',
-            'title' => $title,
-            'ui'    => [
-                'version'   => 1,
-                'buttons'   => [],
-                'render'    => '',
-            ]
+            'title' => $title
         ];
         return $this;
     }
 
     /**
-     * @param Button $button
+     * @param UIPayload $uiPayload
      * @return $this
      */
-    function addButton(Button $button)
+    public function setUI(UIPayload $uiPayload)
     {
-        array_push($this->json["ui"]["buttons"], $button->toArray());
-        return $this;
+        $this->json['ui'] = $uiPayload->toArray();
+        return$this;
     }
 
     /**
-     * @param Component $component
+     * @param $title
      * @return $this
      */
-    public function setRender(Component $component)
+    public function setTitle($title)
     {
-        $this->json["ui"]["render"] = $component->toArray();
+        $this->json['title'] = $title;
         return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function toArray()
-    {
-        return $this->json;
     }
 
 }

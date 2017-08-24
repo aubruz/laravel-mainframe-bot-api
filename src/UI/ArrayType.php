@@ -2,12 +2,11 @@
 
 namespace Aubruz\Mainframe\UI;
 
-
 /**
- * Class Component
+ * Class ArrayType
  * @package Aubruz\Mainframe\UI
  */
-abstract class Component
+abstract class ArrayType
 {
     /**
      * @var array
