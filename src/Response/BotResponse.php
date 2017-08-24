@@ -24,6 +24,16 @@ class BotResponse extends ArrayType
     }
 
     /**
+     * @param $success
+     * @return $this
+     */
+    public function setSuccess($success)
+    {
+        $this->json["success"] = $success;
+        return $this;
+    }
+
+    /**
      * @param $message
      * @return $this
      */
