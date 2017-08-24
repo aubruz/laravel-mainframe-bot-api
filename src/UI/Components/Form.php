@@ -7,7 +7,7 @@ use Aubruz\Mainframe\UI\UIComponent;
 
 /**
  * Class Form
- * @package Aubruz\Mainframe\UI\Components
+ * @package Aubruz\Mainframe\UI\Form
  */
 class Form extends UIComponent
 {
