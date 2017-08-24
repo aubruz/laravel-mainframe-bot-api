@@ -1,8 +1,8 @@
 <?php
 
-namespace Aubruz\Mainframe\UI\Components;
+namespace Aubruz\Mainframe\UI;
 
-use Aubruz\Mainframe\UI\ArrayType;
+use Aubruz\Mainframe\ArrayType;
 
 /**
  * Class UIComponent

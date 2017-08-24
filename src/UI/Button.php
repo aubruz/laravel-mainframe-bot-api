@@ -2,6 +2,8 @@
 
 namespace Aubruz\Mainframe\UI;
 
+use Aubruz\Mainframe\ArrayType;
+
 
 /**
  * Class Button

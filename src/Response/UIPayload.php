@@ -1,7 +1,9 @@
 <?php
 
-namespace Aubruz\Mainframe\UI;
+namespace Aubruz\Mainframe\Response;
 
+use Aubruz\Mainframe\ArrayType;
+use Aubruz\Mainframe\UI\Button;
 use Aubruz\Mainframe\UI\Components\UIComponent;
 
 /**

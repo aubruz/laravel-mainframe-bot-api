@@ -1,13 +1,14 @@
 <?php
 
-namespace Aubruz\Mainframe\UI;
+namespace Aubruz\Mainframe\Response;
 
+use Aubruz\Mainframe\ArrayType;
 
 /**
  * Class Modal
  * @package Aubruz\Mainframe\UI
  */
-class Modal extends ArrayType
+class ModalData extends ArrayType
 {
 
     /**

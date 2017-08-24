@@ -3,6 +3,8 @@
 namespace Aubruz\Mainframe\UI\Components;
 
 
+use Aubruz\Mainframe\UI\UIComponent;
+
 /**
  * Class Form
  * @package Aubruz\Mainframe\UI\Components

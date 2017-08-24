@@ -1,10 +1,10 @@
 <?php
 
-namespace Aubruz\Mainframe\UI;
+namespace Aubruz\Mainframe;
 
 /**
  * Class ArrayType
- * @package Aubruz\Mainframe\UI
+ * @package Aubruz\Mainframe
  */
 abstract class ArrayType
 {

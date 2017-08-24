@@ -2,6 +2,8 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\UI\UIComponent;
+
 
 /**
  * Class CheckboxItem
