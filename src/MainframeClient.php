@@ -122,7 +122,7 @@ class MainframeClient
                 'json'      => $json
             ]);
         }catch (RequestException $e) {
-            return $e;
+            return $e->getResponse();
         }
     }
 }
