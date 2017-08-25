@@ -11,6 +11,11 @@ use Aubruz\Mainframe\ArrayType;
 class AuthenticationData extends ArrayType
 {
 
+    /**
+     * AuthenticationData constructor.
+     * @param $url
+     * @param string $type
+     */
     public function __construct($url, $type = 'authentication')
     {
         $this->json = [
