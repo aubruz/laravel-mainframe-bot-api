@@ -10,6 +10,7 @@ You can find the documentation of the mainframe API [here](http://developer.main
 ## How to install it
 With composer:
 `composer require aubruz/mainframe-bot-api`
+Add `use Aubruz\Mainframe\MainframeClient;` in your project.
 
 ## How to use it
 ### Create client

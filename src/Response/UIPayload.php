@@ -4,7 +4,7 @@ namespace Aubruz\Mainframe\Response;
 
 use Aubruz\Mainframe\ArrayType;
 use Aubruz\Mainframe\UI\Button;
-use Aubruz\Mainframe\UI\UIComponent;
+use Aubruz\Mainframe\UI\RootComponent;
 
 /**
  * Class UIPayload
@@ -36,10 +36,10 @@ class UIPayload extends ArrayType
     }
 
     /**
-     * @param UIComponent $component
+     * @param RootComponent $component
      * @return $this
      */
-    public function setRender(UIComponent $component)
+    public function setRender(RootComponent $component)
     {
         $this->json["render"] = $component->toArray();
         return $this;

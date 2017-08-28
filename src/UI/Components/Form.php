@@ -3,41 +3,36 @@
 namespace Aubruz\Mainframe\UI\Components;
 
 
-use Aubruz\Mainframe\UI\UIComponent;
+use Aubruz\Mainframe\UI\RootComponent;
 
 /**
  * Class Form
  * @package Aubruz\Mainframe\UI\Form
  */
-class Form extends UIComponent
+class Form extends RootComponent
 {
+
     /**
      * Form constructor.
-     * @param string $payload
      */
-    function __construct($payload = '')
+    function __construct()
     {
-        $this->json = [
-            "type"  => "Form",
-            "props" => [
-                "payload"   => [
-                    "type"  => $payload
-                ],
-                "children"   => [],
-                "data"  => []
-            ]
-        ];
+        parent::__construct();
+        $this->setType("form");
+        $this->canHaveChildren();
+        $this->addProps([
+            "data"  => []
+        ]);
+
         return $this;
     }
 
     /**
-     * @param FormChild $child
-     * @return $this
+     * @param $payload
      */
-    public function addChildren(FormChild $child)
+    public function addPayload($payload)
     {
-        array_push($this->json["props"]["children"], $child->toArray());
-        return $this;
+        $this->addProps(["payload" => $payload]);
     }
 
     /**

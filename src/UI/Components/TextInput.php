@@ -2,12 +2,14 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\UI\ChildComponent;
+
 
 /**
  * Class TextInput
  * @package Aubruz\Mainframe\UI\Components
  */
-class TextInput extends FormChild
+class TextInput extends ChildComponent
 {
 
     /**
@@ -17,13 +19,14 @@ class TextInput extends FormChild
      */
     public function __construct($id, $label)
     {
-        $this->json = [
-            "type"  => "TextInput",
-            "props" => [
-                "id"    => $id,
-                "label"     =>  $label
-            ]
-        ];
+        parent::__construct();
+        $this->type = "TextInput";
+        $this->addProps([
+            "id"    => $id,
+            "label"     =>  $label
+        ]);
+
+        return $this;
     }
 
     /**
@@ -32,7 +35,7 @@ class TextInput extends FormChild
      */
     public function setPrefix($prefix)
     {
-       $this->json["props"]["prefix"] = $prefix;
+        $this->addProps(["prefix" => $prefix]);
         return $this;
     }
 
@@ -41,7 +44,7 @@ class TextInput extends FormChild
      * @return $this
      */
     public function setErrorFeedback($error){
-        $this->json["props"]["errorFeedback"] = $error;
+        $this->addProps(["errorFeedback" => $error]);
         return $this;
     }
 
@@ -50,7 +53,7 @@ class TextInput extends FormChild
      * @return $this
      */
     public function setButtonTitle($title){
-        $this->json["props"]["buttonTitle"] = $title;
+        $this->addProps(["buttonTitle" => $title]);
         return $this;
     }
 
@@ -59,7 +62,7 @@ class TextInput extends FormChild
      * @return $this
      */
     public function setButtonType($type){
-        $this->json["props"]["buttonType"] = $type;
+        $this->addProps(["buttonType" => $type]);
         return $this;
     }
 
@@ -68,7 +71,7 @@ class TextInput extends FormChild
      * @return $this
      */
     public function setButtonPayload($payload){
-        $this->json["props"]["buttonPayload"] = $payload;
+        $this->addProps(["buttonPayload" => $payload]);
         return $this;
     }
 }

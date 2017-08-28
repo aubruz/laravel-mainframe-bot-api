@@ -2,14 +2,14 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
-use Aubruz\Mainframe\UI\UIComponent;
+use Aubruz\Mainframe\UI\ChildComponent;
 
 
 /**
  * Class CheckboxItem
  * @package Aubruz\Mainframe\UI\Components
  */
-class CheckboxItem extends UIComponent
+class CheckboxItem extends ChildComponent
 {
 
     /**
@@ -19,13 +19,14 @@ class CheckboxItem extends UIComponent
      */
     public function __construct($id, $label)
     {
-        $this->json = [
-            "type"  => "CheckboxItem",
-            "props" => [
-                "id"    => $id,
-                "label" =>  $label
-            ]
-        ];
+        parent::__construct();
+        $this->setType("CheckboxItem");
+        $this->canHaveChildren();
+        $this->addProps([
+            "id"    => $id,
+            "label" =>  $label
+        ]);
+        return $this;
     }
 
 

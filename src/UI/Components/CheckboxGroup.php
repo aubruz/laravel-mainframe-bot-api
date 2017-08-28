@@ -2,12 +2,13 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\UI\ChildComponent;
 
 /**
  * Class CheckboxGroup
  * @package Aubruz\Mainframe\UI\Components
  */
-class CheckboxGroup extends FormChild
+class CheckboxGroup extends ChildComponent
 {
 
     /**
@@ -16,23 +17,12 @@ class CheckboxGroup extends FormChild
      */
     public function __construct($title)
     {
-        $this->json = [
-            "type"  => "CheckboxGroup",
-            "props" => [
-                "title"    => $title,
-                "children" =>  []
-            ]
-        ];
+        parent::__construct();
+        $this->setType("CheckboxGroup");
+        $this->canHaveChildren();
+        $this->addProps([
+            "title"    => $title,
+        ]);
+       return $this;
     }
-
-    /**
-     * @param CheckboxItem $checkbox
-     * @return $this
-     */
-    public function addChildren(CheckboxItem $checkbox)
-    {
-        array_push($this->json["props"]["children"], $checkbox->toArray());
-        return $this;
-    }
-
 }
