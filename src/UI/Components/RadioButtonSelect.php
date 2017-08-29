@@ -12,17 +12,29 @@ class RadioButtonSelect extends ChildComponent
 {
 
     /**
-     * CheckboxGroup constructor.
+     * RadioButtonSelect constructor.
+     * @param $id
      * @param $title
      */
-    function __construct($title = '')
+    function __construct($id, $title)
     {
         parent::__construct();
-        $this->setType("Author");
-        $this->canHaveChildren();
+        $this->setType("RadioButtonSelect");
         $this->addProps([
-            "title"    => $title
+            "id"        => $id,
+            "title"     => $title,
+            "options"   => []
         ]);
+        return $this;
+    }
+
+    /**
+     * @param array $options
+     * @return $this
+     */
+    public function addOptions($options)
+    {
+        $this->addProps(["options" => $options]);
         return $this;
     }
 

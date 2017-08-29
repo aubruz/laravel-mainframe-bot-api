@@ -2,7 +2,6 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
-
 use Aubruz\Mainframe\UI\RootComponent;
 
 /**
@@ -29,10 +28,12 @@ class Form extends RootComponent
 
     /**
      * @param $payload
+     * @return $this
      */
     public function addPayload($payload)
     {
         $this->addProps(["payload" => $payload]);
+        return $this;
     }
 
     /**
@@ -42,7 +43,7 @@ class Form extends RootComponent
      */
     public function addData($key, $value)
     {
-        $this->json["props"]["data"][$key] = $value;
+        $this->addProps(["data" => [$key => $value]]);
         return $this;
     }
 

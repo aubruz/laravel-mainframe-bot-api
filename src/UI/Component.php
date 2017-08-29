@@ -48,13 +48,19 @@ class Component extends ArrayType
     }
 
     /**
-     * @param $props
+     * @param array $props
      * @return $this
      */
     public function addProps($props)
     {
-        foreach($props as $key => $value){
-            $this->json["props"][$key] = $value;
+        foreach($props as $propertyKey => $propertyValue){
+            if(is_array($propertyValue)){
+                foreach($propertyValue as $key => $value){
+                    $this->json["props"][$propertyKey][$key] = $value;
+                }
+            }else {
+                $this->json["props"][$propertyKey] = $propertyValue;
+            }
         }
         return $this;
     }

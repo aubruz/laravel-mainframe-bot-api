@@ -12,17 +12,38 @@ class MultiSelect extends ChildComponent
 {
 
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * MultiSelect constructor.
+     * @param $id
+     * @param $label
      */
-    function __construct($title = '')
+    public function __construct($id, $label)
     {
         parent::__construct();
-        $this->setType("Author");
-        $this->canHaveChildren();
+        $this->setType("MultiSelect");
         $this->addProps([
-            "title"    => $title
+            "id"        => $id,
+            "label"     => $label,
+            "options"   => []
         ]);
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function disable()
+    {
+        $this->addProps(["disabled" => true]);
+        return $this;
+    }
+
+    /**
+     * @param string|array $options
+     * @return $this
+     */
+    public function addOptions($options)
+    {
+        $this->addProps(["options" => $options]);
         return $this;
     }
 
