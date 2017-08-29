@@ -10,19 +10,37 @@ use Aubruz\Mainframe\UI\ChildComponent;
  */
 class IconTextGroup extends ChildComponent
 {
-
     /**
      * CheckboxGroup constructor.
-     * @param $title
+     * @param string $primaryText
      */
-    function __construct($title = '')
+    public function __construct($primaryText)
     {
         parent::__construct();
         $this->setType("IconTextGroup");
-        $this->canHaveChildren();
         $this->addProps([
-            "title"    => $title
+            "primaryText" => $primaryText
         ]);
+        return $this;
+    }
+
+    /**
+     * @param string $text
+     * @return $this
+     */
+    public function setSecondaryText($text)
+    {
+        $this->addProps(["secondaryText" => $text]);
+        return $this;
+    }
+
+    /**
+     * @param string $url
+     * @return $this
+     */
+    public function setImageUrl($url)
+    {
+        $this->addProps(["imageUrl" => $url]);
         return $this;
     }
 

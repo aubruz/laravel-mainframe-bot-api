@@ -12,17 +12,53 @@ class ListItem extends ChildComponent
 {
 
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * ListItem constructor.
      */
-    function __construct($title = '')
+    public function __construct()
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("ListItem");
         $this->canHaveChildren();
-        $this->addProps([
-            "title"    => $title
-        ]);
+        return $this;
+    }
+
+    /**
+     * @param $type
+     * @return $this
+     */
+    public function setListType($type)
+    {
+        $this->addProps(["type" => $type]);
+        return $this;
+    }
+
+    /**
+     * @param $payload
+     * @return $this
+     */
+    public function setPayload($payload)
+    {
+        $this->addProps(["payload" => $payload]);
+        return $this;
+    }
+
+    /**
+     * @param $url
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->addProps(["url" => $url]);
+        return $this;
+    }
+
+    /**
+     * @param $title
+     * @return $this
+     */
+    public function setModalTitle($title)
+    {
+        $this->addProps(["modalTitle" => $title]);
         return $this;
     }
 

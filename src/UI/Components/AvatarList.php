@@ -13,16 +13,24 @@ class AvatarList extends ChildComponent
 
     /**
      * AvatarList constructor.
-     * @param $title
+     * @param string $avatars
      */
-    public function __construct($title)
+    public function __construct($avatars)
     {
         parent::__construct();
-        $this->setType("Author");
-        $this->canHaveChildren();
+        $this->setType("AvatarList");
         $this->addProps([
-            "title"    => $title
+            "avatars"    => $avatars
         ]);
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function isCircle()
+    {
+        $this->addProps(["isCircle" => true]);
         return $this;
     }
 

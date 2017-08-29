@@ -11,17 +11,18 @@ use Aubruz\Mainframe\UI\ChildComponent;
 class TextStyle extends ChildComponent
 {
 
+
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * TextStyle constructor.
+     * @param $type
      */
-    function __construct($title = '')
+    public function __construct($type)
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("TextStyle");
         $this->canHaveChildren();
         $this->addProps([
-            "title"    => $title
+            "type"    => $type
         ]);
         return $this;
     }

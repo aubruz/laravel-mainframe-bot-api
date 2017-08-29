@@ -18,7 +18,7 @@ class Component extends ArrayType
     /**
      * Component constructor.
      */
-    public function __construct()
+    protected function __construct()
     {
         $this->json = [
             "type"  => "",
@@ -41,20 +41,24 @@ class Component extends ArrayType
      * @param $type
      * @return $this
      */
-    public function setType($type)
+    protected function setType($type)
     {
         $this->json["type"] = $type;
         return $this;
     }
 
+
     /**
-     * @param array $props
+     * @param $props
+     * @param bool $push
      * @return $this
      */
-    public function addProps($props)
+    protected function addProps($props, $push = false)
     {
         foreach($props as $propertyKey => $propertyValue){
-            if(is_array($propertyValue)){
+            if($push){
+                array_push($this->json["props"][$propertyKey], $propertyValue);
+            }else if(is_array($propertyValue)){
                 foreach($propertyValue as $key => $value){
                     $this->json["props"][$propertyKey][$key] = $value;
                 }
@@ -72,7 +76,7 @@ class Component extends ArrayType
     public function addChildren(ChildComponent $component)
     {
         if($this->canHaveChildren) {
-            array_push($this->json["props"]["children"],  $component->toArray());
+            $this->addProps(["children" => $component->toArray()], true);
         }
 
         return $this;

@@ -10,20 +10,31 @@ use Aubruz\Mainframe\UI\ChildComponent;
  */
 class TextHighlight extends ChildComponent
 {
-
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * TextHighlight constructor.
      */
-    function __construct($title = '')
+    public function __construct()
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("TextHighlight");
         $this->canHaveChildren();
-        $this->addProps([
-            "title"    => $title
-        ]);
         return $this;
+    }
+
+    /**
+     * @param $color
+     */
+    public function setTextColor($color)
+    {
+        $this->addProps(["textColor" => $color]);
+    }
+
+    /**
+     * @param $color
+     */
+    public function setHighlightColor($color)
+    {
+        $this->addProps(["highlightColor" => $color]);
     }
 
 }

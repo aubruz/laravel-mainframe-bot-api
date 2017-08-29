@@ -21,13 +21,11 @@ class CheckboxItem extends ChildComponent
     {
         parent::__construct();
         $this->setType("CheckboxItem");
-        $this->canHaveChildren();
         $this->addProps([
             "id"    => $id,
             "label" =>  $label
         ]);
         return $this;
     }
-
 
 }

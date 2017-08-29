@@ -12,17 +12,29 @@ class Image extends ChildComponent
 {
 
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * Image constructor.
+     * @param $imageUrl
+     * @param $height
+     * @param $width
      */
-    function __construct($title = '')
+    public function __construct($imageUrl, $height, $width)
     {
         parent::__construct();
-        $this->setType("Author");
-        $this->canHaveChildren();
+        $this->setType("Image");
         $this->addProps([
-            "title"    => $title
+            "imageUrl"  => $imageUrl,
+            "height"    => $height,
+            "width"     => $width
         ]);
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function allowOpenFullImage()
+    {
+        $this->addProps(["allowOpenFullImage" => true]);
         return $this;
     }
 

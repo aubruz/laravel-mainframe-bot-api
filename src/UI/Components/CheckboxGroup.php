@@ -25,4 +25,14 @@ class CheckboxGroup extends ChildComponent
         ]);
        return $this;
     }
+
+    /**
+     * @param CheckboxItem $checkbox
+     * @return $this
+     */
+    public function addChildren(CheckboxItem $checkbox)
+    {
+        parent::addChildren($checkbox);
+        return $this;
+    }
 }

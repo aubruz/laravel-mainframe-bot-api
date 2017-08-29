@@ -10,9 +10,8 @@ use Aubruz\Mainframe\UI\ChildComponent;
  */
 class Author extends ChildComponent
 {
-
     /**
-     * CheckboxGroup constructor.
+     * Author constructor.
      * @param $title
      */
     public function __construct($title, $username)
@@ -27,19 +26,22 @@ class Author extends ChildComponent
     }
 
     /**
-     * @param string $url
+     * @param $url
+     * @return $this
      */
     public function addAvatarUrl($url)
     {
-        $this->json['avatarUrl'] = $url;
+        $this->addProps(["avatarUrl" => $url]);
+        return $this;
     }
 
     /**
-     *
+     * @return $this
      */
     public function isCircle()
     {
-        $this->json['isCircle'] = true;
+        $this->addProps(["isCircle" => true]);
+        return $this;
     }
 
 }

@@ -10,19 +10,14 @@ use Aubruz\Mainframe\UI\ChildComponent;
  */
 class TextSubtle extends ChildComponent
 {
-
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * TextSubtle constructor.
      */
-    function __construct($title = '')
+    public function __construct()
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("TextSubtle");
         $this->canHaveChildren();
-        $this->addProps([
-            "title"    => $title
-        ]);
         return $this;
     }
 

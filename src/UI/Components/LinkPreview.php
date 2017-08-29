@@ -12,17 +12,58 @@ class LinkPreview extends ChildComponent
 {
 
     /**
-     * CheckboxGroup constructor.
+     * LinkPreview constructor.
      * @param $title
+     * @param $url
      */
-    function __construct($title = '')
+    public function __construct($title, $url)
     {
         parent::__construct();
-        $this->setType("Author");
-        $this->canHaveChildren();
+        $this->setType("LinkPreview");
         $this->addProps([
-            "title"    => $title
+            "title"  => $title,
+            "url"    => $url
         ]);
+        return $this;
+    }
+
+    /**
+     * @param $excerpt
+     * @return $this
+     */
+    public function addExcerpt($excerpt)
+    {
+        $this->addProps(["excerpt" => $excerpt]);
+        return $this;
+    }
+
+    /**
+     * @param $url
+     * @return $this
+     */
+    public function addImageUrl($url)
+    {
+        $this->addProps(["imageUrl" => $url]);
+        return $this;
+    }
+
+    /**
+     * @param $url
+     * @return $this
+     */
+    public function addDomainIconUrl($url)
+    {
+        $this->addProps(["domainIconUrl" => $url]);
+        return $this;
+    }
+
+    /**
+     * @param $domainName
+     * @return $this
+     */
+    public function addDomainName($domainName)
+    {
+        $this->addProps(["domainName" => $domainName]);
         return $this;
     }
 

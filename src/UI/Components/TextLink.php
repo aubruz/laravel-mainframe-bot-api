@@ -10,20 +10,36 @@ use Aubruz\Mainframe\UI\ChildComponent;
  */
 class TextLink extends ChildComponent
 {
-
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * TextLink constructor.
+     * @param $url
      */
-    function __construct($title = '')
+    public function __construct($url)
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("TextLink");
         $this->canHaveChildren();
         $this->addProps([
-            "title"    => $title
+            "url"    => $url
         ]);
         return $this;
     }
 
+    /**
+     * @return $this
+     */
+    public function noStyle()
+    {
+        $this->addProps(["noStyle" => true]);
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function noEmojify()
+    {
+        $this->addProps(["noEmojify" => true]);
+        return $this;
+    }
 }

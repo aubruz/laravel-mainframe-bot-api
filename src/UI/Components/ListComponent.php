@@ -12,18 +12,23 @@ class ListComponent extends ChildComponent
 {
 
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * ListComponent constructor.
      */
-    function __construct($title = '')
+    public function __construct()
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("ListComponent");
         $this->canHaveChildren();
-        $this->addProps([
-            "title"    => $title
-        ]);
         return $this;
     }
 
+    /**
+     * @param ListItem $listItem
+     * @return $this
+     */
+    public function addChildren(ListItem $listItem)
+    {
+        parent::addChildren($listItem);
+        return $this;
+    }
 }

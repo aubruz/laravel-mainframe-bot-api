@@ -20,7 +20,7 @@ class TextInput extends ChildComponent
     public function __construct($id, $label)
     {
         parent::__construct();
-        $this->type = "TextInput";
+        $this->setType("TextInput");
         $this->addProps([
             "id"    => $id,
             "label"     =>  $label

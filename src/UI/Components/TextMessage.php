@@ -15,7 +15,7 @@ class TextMessage extends RootComponent
      * Form constructor.
      * @param string $payload
      */
-    function __construct($title = '')
+    public function __construct($title = '')
     {
         parent::__construct();
         $this->setType("Author");
