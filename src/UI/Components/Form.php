@@ -17,7 +17,7 @@ class Form extends RootComponent
     function __construct()
     {
         parent::__construct();
-        $this->setType("form");
+        $this->setType("Form");
         $this->canHaveChildren();
         $this->addProps([
             "data"  => []
