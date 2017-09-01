@@ -50,7 +50,7 @@ class MultiSelect extends ChildComponent
                 $this->addProps(["options" => [
                     "label" => $value,
                     "value" => $key
-                ]]);
+                ]], true);
             }
         }
 
