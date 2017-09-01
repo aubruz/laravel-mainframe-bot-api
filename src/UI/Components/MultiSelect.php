@@ -43,7 +43,17 @@ class MultiSelect extends ChildComponent
      */
     public function addOptions($options)
     {
-        $this->addProps(["options" => $options], true);
+        if(is_string($options)) {
+            $this->addProps(["options" => $options], true);
+        }else if(is_array($options)){
+            foreach ($options as $key => $value) {
+                $this->addProps(["options" => [
+                    "label" => $value,
+                    "value" => $key
+                ]]);
+            }
+        }
+
         return $this;
     }
 
