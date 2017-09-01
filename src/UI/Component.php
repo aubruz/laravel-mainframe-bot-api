@@ -58,7 +58,7 @@ class Component extends ArrayType
         foreach($props as $propertyKey => $propertyValue){
             if($push){
                 array_push($this->json["props"][$propertyKey], $propertyValue);
-            }else if(is_array($propertyValue)){
+            }else if(is_array($propertyValue) && count($propertyValue) > 0){
                 foreach($propertyValue as $key => $value){
                     $this->json["props"][$propertyKey][$key] = $value;
                 }
