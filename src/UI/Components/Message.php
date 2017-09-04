@@ -12,19 +12,14 @@ use Aubruz\Mainframe\UI\RootComponent;
 class Message extends RootComponent
 {
     /**
-     * Form constructor.
-     * @param string $payload
+     * Message constructor.
      */
-    function __construct($title = '')
+    function __construct()
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("Message");
         $this->canHaveChildren();
-        $this->addProps([
-            "title"    => $title
-        ]);
         return $this;
     }
-
 
 }
