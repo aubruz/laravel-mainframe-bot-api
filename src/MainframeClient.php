@@ -2,6 +2,7 @@
 
 namespace Aubruz\Mainframe;
 
+use Aubruz\Mainframe\Response\UIPayload;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -50,16 +51,33 @@ class MainframeClient
         ];
     }
 
+
     /**
-     * @param string $conversationID
-     * @param string $message
+     * @param $conversationID
+     * @param string|UIPayload $message
+     * @param null $subscriptionID
+     * @param null $type
+     * @return \Exception|RequestException|mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function sendMessage($conversationID, $message = '')
+    public function sendMessage($conversationID, $message = '', $subscriptionID = null, $type = null)
     {
         $json = [
             'conversation_id'   => $conversationID,
-            'message'           => $message,
         ];
+
+        if($message instanceof UIPayload){
+            $json["message"] = $message;
+        }else{
+            $json["data"] = $message;
+        }
+
+        if($subscriptionID){
+            $json["subscription_id"] = $subscriptionID;
+        }
+
+        if($type){
+            $json["type"] = $type;
+        }
 
         return $this->makeCall('POST', 'send_message', $json);
     }
@@ -94,6 +112,12 @@ class MainframeClient
         return $this->makeCall('POST', 'edit_subscription', $json);
     }
 
+    /**
+     * @param $conversationID
+     * @param $subscriptionID
+     * @param null $message
+     * @return \Exception|RequestException|mixed|\Psr\Http\Message\ResponseInterface
+     */
     public function deleteSubscription($conversationID, $subscriptionID, $message = null)
     {
         $json = [
