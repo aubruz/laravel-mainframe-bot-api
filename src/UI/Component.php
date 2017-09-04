@@ -70,13 +70,17 @@ class Component extends ArrayType
     }
 
     /**
-     * @param ChildComponent $component
+     * @param ChildComponent|string $component
      * @return $this
      */
-    public function addChildren(ChildComponent $component)
+    public function addChildren($component)
     {
         if($this->canHaveChildren) {
-            $this->addProps(["children" => $component->toArray()], true);
+            if($component instanceof ChildComponent) {
+                $this->addProps(["children" => $component->toArray()], true);
+            }else{
+                $this->addProps(["children" => $component], true);
+            }
         }
 
         return $this;
