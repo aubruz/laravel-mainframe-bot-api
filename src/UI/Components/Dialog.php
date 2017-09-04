@@ -13,18 +13,14 @@ class Dialog extends RootComponent
 {
     /**
      * Dialog constructor.
-     * @param string $payload
+     * @return $this
      */
-    function __construct($title = '')
+    function __construct()
     {
         parent::__construct();
-        $this->setType("Author");
+        $this->setType("Dialog");
         $this->canHaveChildren();
-        $this->addProps([
-            "title"    => $title
-        ]);
         return $this;
     }
-
 
 }
