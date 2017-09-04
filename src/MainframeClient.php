@@ -66,9 +66,9 @@ class MainframeClient
         ];
 
         if($message instanceof UIPayload){
-            $json["message"] = $message;
+            $json["data"] = $message->toArray();
         }else{
-            $json["data"] = $message;
+            $json["message"] = $message;
         }
 
         if($subscriptionID){
