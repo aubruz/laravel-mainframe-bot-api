@@ -2,7 +2,6 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
-
 use Aubruz\Mainframe\UI\RootComponent;
 
 /**

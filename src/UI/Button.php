@@ -3,6 +3,7 @@
 namespace Aubruz\Mainframe\UI;
 
 use Aubruz\Mainframe\ArrayType;
+use Aubruz\Mainframe\Exceptions\UIException;
 
 
 /**
@@ -19,9 +20,7 @@ class Button extends ArrayType
     function __construct($title)
     {
         $this->json = [
-            "title" => $title,
-            "type"  => 'post_payload',
-            "style" => 'primary',
+            "title" => $title
         ];
         return $this;
     }
@@ -32,19 +31,13 @@ class Button extends ArrayType
      */
     public function setUrl($url)
     {
-        $this->json["url"] = $url;
+        if(!in_array($this->getProp("url"), ["copy_url", "open_url"])) {
+            throw new UIException('To set an url, the type of the button must be either "copy_url" or "open_url"!');
+        }
+        $this->setProp("url", $url);
         return $this;
     }
 
-    /**
-     * @param $style
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->json["style"] = $style;
-        return $this;
-    }
 
     /**
      * @param $payload
@@ -52,7 +45,7 @@ class Button extends ArrayType
      */
     public function setPayload($payload)
     {
-        $this->json["payload"] = $payload;
+        $this->setProp("payload", $payload);
         return $this;
     }
 
@@ -62,7 +55,40 @@ class Button extends ArrayType
      */
     public function setType($type)
     {
-        $this->json["type"] = $type;
+        $this->setProp("type", $type);
         return $this;
+    }
+
+    /**
+     * @param $type
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->setProp("title", $title);
+        return $this;
+    }
+
+    /**
+     * @param $prop
+     * @param $value
+     * @return $this
+     */
+    public function setProp($prop, $value)
+    {
+        $this->json[$prop] = $value;
+        return $this;
+    }
+
+    /**
+     * @param $prop
+     * @return mixed
+     */
+    public function getProp($prop)
+    {
+        if(array_key_exists($prop, $this->json)) {
+            return $this->json[$prop];
+        }
+        return null;
     }
 }
