@@ -7,6 +7,9 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class Author
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A component that can represent a user with simple user data.
+ *
  */
 class Author extends ChildComponent
 {
@@ -14,13 +17,13 @@ class Author extends ChildComponent
      * Author constructor.
      * @param $title
      */
-    public function __construct($title, $username)
+    public function __construct($displayName, $username)
     {
         parent::__construct();
         $this->setType("Author");
         $this->addProps([
-            "displayName"    => $title,
-            "username" =>  $username
+            "displayName"   => $displayName,
+            "username"      =>  $username
         ]);
         return $this;
     }

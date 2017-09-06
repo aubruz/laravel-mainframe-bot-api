@@ -7,6 +7,9 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class Image
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A component that renders an image.
+ *
  */
 class Image extends ChildComponent
 {

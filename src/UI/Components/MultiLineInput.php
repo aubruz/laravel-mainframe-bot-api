@@ -7,22 +7,36 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class MultiLineInput
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * Text input for when you want the text to be wrapped and to display multiple lines, can only be used a a child of a Form.
+ *
  */
 class MultiLineInput extends ChildComponent
 {
 
     /**
-     * CheckboxGroup constructor.
-     * @param $title
+     * MultiLineInput constructor.
+     * @param $id
+     * @param $label
      */
-    function __construct($title = '')
+    public function __construct($id, $label)
     {
         parent::__construct();
-        $this->setType("Author");
-        $this->canHaveChildren();
+        $this->setType("MultiLineInput");
         $this->addProps([
-            "title"    => $title
+            "id"    => $id,
+            "label" => $label
         ]);
+        return $this;
+    }
+
+    /**
+     * @param $error
+     * @return $this
+     */
+    public function setErrorFeedback($error)
+    {
+        $this->addProps(["errorFeedback" => $error]);
         return $this;
     }
 

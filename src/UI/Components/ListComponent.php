@@ -7,6 +7,9 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class ListComponent
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * Container for ListItem children.
+ *
  */
 class ListComponent extends ChildComponent
 {

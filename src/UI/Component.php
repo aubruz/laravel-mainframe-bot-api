@@ -16,6 +16,11 @@ class Component extends ArrayType
     private $canHaveChildren = false;
 
     /**
+     * @var boolean
+     */
+    private $mustHaveChildren = false;
+
+    /**
      * Component constructor.
      */
     protected function __construct()
@@ -35,6 +40,15 @@ class Component extends ArrayType
         $this->canHaveChildren = true;
         $this->json["props"]["children"] = [];
         return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function mustHaveChildren()
+    {
+        $this->mustHaveChildren = true;
+        return $this->canHaveChildren();
     }
 
     /**
@@ -67,6 +81,18 @@ class Component extends ArrayType
             }
         }
         return $this;
+    }
+
+    /**
+     * @param $prop
+     * @return mixed
+     */
+    public function getProp($prop)
+    {
+        if(array_key_exists($prop, $this->json["props"])) {
+            return $this->json["props"][$prop];
+        }
+        return null;
     }
 
     /**

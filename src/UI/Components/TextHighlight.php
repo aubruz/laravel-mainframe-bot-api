@@ -2,11 +2,15 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\Exceptions\UIException;
 use Aubruz\Mainframe\UI\ChildComponent;
 
 /**
  * Class TextHighlight
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A text with a custom color and highlight (background) color.
+ *
  */
 class TextHighlight extends ChildComponent
 {
@@ -35,6 +39,19 @@ class TextHighlight extends ChildComponent
     public function setHighlightColor($color)
     {
         $this->addProps(["highlightColor" => $color]);
+    }
+
+    /**
+     * @param ChildComponent|string $component
+     * @return $this
+     * @throws UIException
+     */
+    public function addChildren($component)
+    {
+        if($component instanceof TextLink || $component instanceof TextStyle || is_string($component)) {
+            return parent::addChildren($component);
+        }
+        throw new UIException("The childs of a TextHighlight must be a string or an instance of TextLink or TextStyle!");
     }
 
 }

@@ -7,6 +7,9 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class IconTextGroup
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A component that renders a group of image, primary text and secondary text.
+ *
  */
 class IconTextGroup extends ChildComponent
 {

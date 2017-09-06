@@ -2,11 +2,15 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\Exceptions\UIException;
 use Aubruz\Mainframe\UI\ChildComponent;
 
 /**
  * Class MultiSelect
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A component where users can select multiple options
+ *
  */
 class MultiSelect extends ChildComponent
 {
@@ -55,6 +59,18 @@ class MultiSelect extends ChildComponent
         }
 
         return $this;
+    }
+
+    /**
+     * @return array
+     * @throws UIException
+     */
+    public function toArray()
+    {
+        if($this->getProp("options") === null){
+            throw new UIException('The options property of MultiSelect component is missing!');
+        }
+        return parent::toArray();
     }
 
 }

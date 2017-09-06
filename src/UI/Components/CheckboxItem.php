@@ -8,6 +8,9 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class CheckboxItem
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A text label with a checkbox positioned at the front of the label
+ *
  */
 class CheckboxItem extends ChildComponent
 {

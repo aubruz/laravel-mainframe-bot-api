@@ -2,11 +2,15 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\Exceptions\UIException;
 use Aubruz\Mainframe\UI\ChildComponent;
 
 /**
  * Class Dropdown
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A component where users can only select a single option
+ *
  */
 class Dropdown extends ChildComponent
 {
@@ -54,5 +58,17 @@ class Dropdown extends ChildComponent
     {
         $this->addProps(["options" => $options], true);
         return $this;
+    }
+
+    /**
+     * @return array
+     * @throws UIException
+     */
+    public function toArray()
+    {
+        if($this->getProp("options") === null){
+            throw new UIException('The options property of Dropdown component is missing!');
+        }
+        return parent::toArray();
     }
 }

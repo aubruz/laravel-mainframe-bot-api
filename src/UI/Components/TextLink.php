@@ -2,11 +2,15 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\Exceptions\UIException;
 use Aubruz\Mainframe\UI\ChildComponent;
 
 /**
  * Class TextLink
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * Text field which is a link to an external URL.
+ *
  */
 class TextLink extends ChildComponent
 {
@@ -41,5 +45,17 @@ class TextLink extends ChildComponent
     {
         $this->addProps(["noEmojify" => true]);
         return $this;
+    }
+
+    /**
+     * @return array
+     * @throws UIException
+     */
+    public function toArray()
+    {
+        if($this->getProp("children") === null){
+            throw new UIException('A TextLink must have at least one children!');
+        }
+        return parent::toArray();
     }
 }

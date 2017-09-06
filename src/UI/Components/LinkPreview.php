@@ -7,6 +7,9 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class LinkPreview
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A component that represents a link on the web
+ *
  */
 class LinkPreview extends ChildComponent
 {

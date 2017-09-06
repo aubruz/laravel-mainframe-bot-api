@@ -2,11 +2,15 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\Exceptions\UIException;
 use Aubruz\Mainframe\UI\ChildComponent;
 
 /**
  * Class RadioButtonSelect
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A selector displaying a list of radio buttons with a main label above the grouping.
+ *
  */
 class RadioButtonSelect extends ChildComponent
 {
@@ -46,6 +50,18 @@ class RadioButtonSelect extends ChildComponent
         }
 
         return $this;
+    }
+
+    /**
+     * @return array
+     * @throws UIException
+     */
+    public function toArray()
+    {
+        if($this->getProp("options") === null){
+            throw new UIException('The options property of RadioButtonSelect component is missing!');
+        }
+        return parent::toArray();
     }
 
 }

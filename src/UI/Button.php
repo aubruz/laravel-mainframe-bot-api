@@ -31,7 +31,7 @@ class Button extends ArrayType
      */
     public function setUrl($url)
     {
-        if(!in_array($this->getProp("url"), ["copy_url", "open_url"])) {
+        if(!in_array($this->getProp("type"), ["copy_url", "open_url"])) {
             throw new UIException('To set an url, the type of the button must be either "copy_url" or "open_url"!');
         }
         $this->setProp("url", $url);

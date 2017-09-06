@@ -7,13 +7,16 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class AvatarList
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A component that represents a horizontal row/list of images.
+ *
  */
 class AvatarList extends ChildComponent
 {
 
     /**
      * AvatarList constructor.
-     * @param string $avatars
+     * @param array $avatars
      */
     public function __construct($avatars)
     {
@@ -22,6 +25,16 @@ class AvatarList extends ChildComponent
         $this->addProps([
             "avatars"    => $avatars
         ]);
+        return $this;
+    }
+
+    /**
+     * @param $name
+     * @return $this
+     */
+    public function addAvatar($name)
+    {
+        $this->addProps(["avatars" => $name], true);
         return $this;
     }
 

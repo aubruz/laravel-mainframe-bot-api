@@ -7,6 +7,9 @@ use Aubruz\Mainframe\UI\ChildComponent;
 /**
  * Class CheckboxGroup
  * @package Aubruz\Mainframe\UI\Components
+ *
+ * A group of CheckboxItems but with a main label above the grouping
+ *
  */
 class CheckboxGroup extends ChildComponent
 {
