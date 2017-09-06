@@ -2,7 +2,7 @@
 
 namespace Aubruz\Mainframe;
 
-use Aubruz\Mainframe\Response\UIPayload;
+use Aubruz\Mainframe\Responses\UIPayload;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

@@ -1,9 +1,8 @@
 <?php
 
-namespace Aubruz\Mainframe\Response;
+namespace Aubruz\Mainframe\Responses;
 
 use \Aubruz\Mainframe\ArrayType;
-
 
 /**
  * Class BotResponse
