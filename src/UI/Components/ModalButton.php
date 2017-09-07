@@ -13,6 +13,15 @@ class ModalButton extends UIButton
 {
 
     /**
+     * ModalButton constructor.
+     * @param $title
+     */
+    public function __construct($title)
+    {
+        parent::__construct($title);
+    }
+
+    /**
      * @param $type
      * @return $this
      * @throws UIException
