@@ -66,9 +66,6 @@ class MenuButton extends UIButton
      */
     public function setPayload($payload)
     {
-        if(!in_array($this->getProp("type"), ["open_modal", "message_embed", "post_payload"])) {
-            throw new UIException('To set a payload, the type of the MenuButton must be either "open_modal", "message_embed" or "post_payload"!');
-        }
         return parent::setPayload($payload);
     }
 

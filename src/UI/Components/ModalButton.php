@@ -45,9 +45,6 @@ class ModalButton extends UIButton
      */
     public function setPayload($payload)
     {
-        if(!in_array($this->getProp("type"), ["message_embed", "post_payload"])) {
-            throw new UIException('To set a payload, the type of the button must be either "message_embed" or "post_payload"!');
-        }
         return parent::setPayload($payload);
     }
 

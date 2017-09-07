@@ -46,9 +46,6 @@ class MessageButton extends UIButton
      */
     public function setPayload($payload)
     {
-        if(!in_array($this->getProp("type"), ["open_modal", "post_payload"])) {
-            throw new UIException('To set a payload, the type of the button must be either "open_modal" or "post_payload"!');
-        }
         return parent::setPayload($payload);
     }
 
