@@ -113,6 +113,10 @@ class Component extends ArrayType
         return $this;
     }
 
+    /**
+     * @return array
+     * @throws UIException
+     */
     public function toArray()
     {
         if($this->mustHaveChildren && $this->getProp("children") === null){
