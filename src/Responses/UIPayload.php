@@ -3,7 +3,7 @@
 namespace Aubruz\Mainframe\Responses;
 
 use Aubruz\Mainframe\ArrayType;
-use Aubruz\Mainframe\UI\Button;
+use Aubruz\Mainframe\UI\UIButton;
 use Aubruz\Mainframe\UI\RootComponent;
 
 /**
@@ -26,10 +26,10 @@ class UIPayload extends ArrayType
     }
 
     /**
-     * @param Button $button
+     * @param UIButton $button
      * @return $this
      */
-    public function addButton(Button $button)
+    public function addButton(UIButton $button)
     {
         array_push($this->json["buttons"], $button->toArray());
         return $this;

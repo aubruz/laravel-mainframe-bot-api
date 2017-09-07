@@ -3,9 +3,13 @@
 namespace Aubruz\Mainframe\UI\Components;
 
 use Aubruz\Mainframe\Exceptions\UIException;
-use Aubruz\Mainframe\UI\Button;
+use Aubruz\Mainframe\UI\UIButton;
 
-class MenuButton extends Button
+/**
+ * Class MenuButton
+ * @package Aubruz\Mainframe\UI\Components
+ */
+class MenuButton extends UIButton
 {
     /**
      * MenuButton constructor.

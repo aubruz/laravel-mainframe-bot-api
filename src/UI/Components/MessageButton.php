@@ -3,9 +3,13 @@
 namespace Aubruz\Mainframe\UI\Components;
 
 use Aubruz\Mainframe\Exceptions\UIException;
-use Aubruz\Mainframe\UI\Button;
+use Aubruz\Mainframe\UI\UIButton;
 
-class MessageButton extends Button
+/**
+ * Class MessageButton
+ * @package Aubruz\Mainframe\UI\Components
+ */
+class MessageButton extends UIButton
 {
 
     /**

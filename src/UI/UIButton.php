@@ -10,7 +10,7 @@ use Aubruz\Mainframe\Exceptions\UIException;
  * Class Button
  * @package Aubruz\Mainframe\UI
  */
-abstract class Button extends ArrayType
+abstract class UIButton extends ArrayType
 {
 
     /**

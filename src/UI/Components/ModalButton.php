@@ -2,10 +2,14 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
-use Aubruz\Mainframe\UI\Button;
+use Aubruz\Mainframe\UI\UIButton;
 use Aubruz\Mainframe\Exceptions\UIException;
 
-class ModalButton extends Button
+/**
+ * Class ModalButton
+ * @package Aubruz\Mainframe\UI\Components
+ */
+class ModalButton extends UIButton
 {
 
     /**
