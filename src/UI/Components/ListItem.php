@@ -22,7 +22,7 @@ class ListItem extends ChildComponent
     {
         parent::__construct();
         $this->setType("ListItem");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 

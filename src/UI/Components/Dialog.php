@@ -23,7 +23,7 @@ class Dialog extends RootComponent
     {
         parent::__construct();
         $this->setType("Dialog");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 

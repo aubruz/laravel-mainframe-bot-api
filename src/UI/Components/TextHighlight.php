@@ -21,7 +21,7 @@ class TextHighlight extends ChildComponent
     {
         parent::__construct();
         $this->setType("TextHighlight");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 

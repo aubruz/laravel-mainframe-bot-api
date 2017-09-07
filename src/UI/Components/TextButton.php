@@ -22,8 +22,7 @@ class TextButton extends ChildComponent
     {
         parent::__construct();
         $this->setType("TextButton");
-        $this->canHaveChildren();
-
+        $this->mustHaveChildren();
         return $this;
     }
 

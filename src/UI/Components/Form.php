@@ -23,7 +23,7 @@ class Form extends RootComponent
     {
         parent::__construct();
         $this->setType("Form");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         $this->addProps([
             "data"  => []
         ]);

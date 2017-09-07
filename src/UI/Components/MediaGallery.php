@@ -23,7 +23,7 @@ class MediaGallery extends ChildComponent
     {
         parent::__construct();
         $this->setType("MediaGallery");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 
@@ -43,17 +43,6 @@ class MediaGallery extends ChildComponent
     public function addChildren(MediaItem $component)
     {
         return parent::addChildren($component);
-    }
-
-    /**
-     * @return array|UIException
-     */
-    public function toArray()
-    {
-        if($this->getProp("children") === null){
-            return new UIException("You must add children to a MediaGallery object!");
-        }
-        return parent::toArray();
     }
 
 }

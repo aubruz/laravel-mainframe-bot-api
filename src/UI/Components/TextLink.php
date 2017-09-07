@@ -22,7 +22,7 @@ class TextLink extends ChildComponent
     {
         parent::__construct();
         $this->setType("TextLink");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         $this->addProps([
             "url"    => $url
         ]);
@@ -45,17 +45,5 @@ class TextLink extends ChildComponent
     {
         $this->addProps(["noEmojify" => true]);
         return $this;
-    }
-
-    /**
-     * @return array
-     * @throws UIException
-     */
-    public function toArray()
-    {
-        if($this->getProp("children") === null){
-            throw new UIException('A TextLink must have at least one children!');
-        }
-        return parent::toArray();
     }
 }

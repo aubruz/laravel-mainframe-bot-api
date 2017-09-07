@@ -18,7 +18,7 @@ class TextSubtle extends ChildComponent
     {
         parent::__construct();
         $this->setType("TextSubtle");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 
@@ -33,18 +33,6 @@ class TextSubtle extends ChildComponent
             return parent::addChildren($component);
         }
         throw new UIException("The childs of a TextHighlight must be a string or an instance of TextLink!");
-    }
-
-    /**
-     * @return array
-     * @throws UIException
-     */
-    public function toArray()
-    {
-        if($this->getProp("children") === null){
-            throw new UIException('A TextSubtle must have at least one children!');
-        }
-        return parent::toArray();
     }
 
 }

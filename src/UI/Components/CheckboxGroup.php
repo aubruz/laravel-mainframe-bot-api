@@ -22,7 +22,7 @@ class CheckboxGroup extends ChildComponent
     {
         parent::__construct();
         $this->setType("CheckboxGroup");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         $this->addProps([
             "title"    => $title,
         ]);

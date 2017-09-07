@@ -23,7 +23,6 @@ class VideoLinkPreview extends ChildComponent
     {
         parent::__construct();
         $this->setType("VideoLinkPreview");
-        $this->canHaveChildren();
         $this->addProps([
             "title" => $title
         ]);

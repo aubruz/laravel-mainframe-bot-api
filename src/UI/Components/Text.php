@@ -22,7 +22,7 @@ class Text extends ChildComponent
     {
         parent::__construct();
         $this->setType("Text");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 

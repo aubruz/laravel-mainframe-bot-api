@@ -20,7 +20,7 @@ class TextMessage extends RootComponent
     {
         parent::__construct();
         $this->setType("TextMessage");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 

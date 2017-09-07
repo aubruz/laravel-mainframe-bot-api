@@ -22,7 +22,7 @@ class Message extends RootComponent
     {
         parent::__construct();
         $this->setType("Message");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 

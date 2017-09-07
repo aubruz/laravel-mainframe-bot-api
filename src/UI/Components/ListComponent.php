@@ -21,7 +21,7 @@ class ListComponent extends ChildComponent
     {
         parent::__construct();
         $this->setType("ListComponent");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         return $this;
     }
 

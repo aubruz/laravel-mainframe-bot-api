@@ -27,23 +27,11 @@ class TextStyle extends ChildComponent
 
         parent::__construct();
         $this->setType("TextStyle");
-        $this->canHaveChildren();
+        $this->mustHaveChildren();
         $this->addProps([
             "type"    => $type
         ]);
         return $this;
-    }
-
-    /**
-     * @return array
-     * @throws UIException
-     */
-    public function toArray()
-    {
-        if($this->getProp("children") === null){
-            throw new UIException('A TextStyle must have at least one children!');
-        }
-        return parent::toArray();
     }
 
 }

@@ -3,6 +3,7 @@
 namespace Aubruz\Mainframe\UI;
 
 use Aubruz\Mainframe\ArrayType;
+use Aubruz\Mainframe\Exceptions\UIException;
 
 /**
  * Class Component
@@ -104,11 +105,19 @@ class Component extends ArrayType
         if($this->canHaveChildren) {
             if($component instanceof ChildComponent) {
                 $this->addProps(["children" => $component->toArray()], true);
-            }else{
+            }else if(is_string($component)) {
                 $this->addProps(["children" => $component], true);
             }
         }
 
         return $this;
+    }
+
+    public function toArray()
+    {
+        if($this->mustHaveChildren && $this->getProp("children") === null){
+            throw new UIException($this->getProp("type") . " must have at least one children!");
+        }
+        return parent::toArray();
     }
 }
