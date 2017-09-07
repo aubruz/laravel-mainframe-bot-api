@@ -57,7 +57,7 @@ class Form extends RootComponent
      * @return $this
      * @throws UIException
      */
-    public function addChildren(ChildComponent $component)
+    public function addChildren($component)
     {
         if($component instanceof CheckboxGroup || $component instanceof CheckboxItem || $component instanceof Dropdown ||
             $component instanceof MultiLineInput || $component instanceof MultiSelect || $component instanceof RadioButtonSelect ||
