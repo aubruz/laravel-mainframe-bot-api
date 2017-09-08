@@ -40,9 +40,12 @@ class MediaGallery extends ChildComponent
      * @param MediaItem $component
      * @return $this
      */
-    public function addChildren(MediaItem $component)
+    public function addChildren($component)
     {
-        return parent::addChildren($component);
+        if($component instanceof MediaItem) {
+            return parent::addChildren($component);
+        }
+        throw new UIException("Child of MediaGallery can only be a MediaItem");
     }
 
 }

@@ -31,7 +31,7 @@ class Message extends RootComponent
      * @return $this
      * @throws UIException
      */
-    public function addChildren(ChildComponent $component)
+    public function addChildren($component)
     {
         if($component instanceof Author || $component instanceof AvatarList || $component instanceof IconTextGroup ||
             $component instanceof Image || $component instanceof LinkPreview || $component instanceof Text ||

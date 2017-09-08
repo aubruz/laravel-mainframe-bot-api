@@ -83,7 +83,7 @@ class ListItem extends ChildComponent
      * @return $this
      * @throws UIException
      */
-    public function addChildren(ChildComponent $component)
+    public function addChildren($component)
     {
         if($component instanceof Author || $component instanceof AvatarList || $component instanceof LinkPreview ||
             $component instanceof IconTextGroup || $component instanceof Image || $component instanceof Text ||

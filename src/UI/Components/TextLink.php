@@ -46,4 +46,12 @@ class TextLink extends ChildComponent
         $this->addProps(["noEmojify" => true]);
         return $this;
     }
+
+    public function addChildren($component)
+    {
+        if(is_string($component)) {
+            return parent::addChildren($component);
+        }
+        throw new UIException("The childs of a Text object must be a string only!");
+    }
 }

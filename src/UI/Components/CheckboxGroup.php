@@ -2,6 +2,7 @@
 
 namespace Aubruz\Mainframe\UI\Components;
 
+use Aubruz\Mainframe\Exceptions\UIException;
 use Aubruz\Mainframe\UI\ChildComponent;
 
 /**
@@ -33,9 +34,11 @@ class CheckboxGroup extends ChildComponent
      * @param CheckboxItem $checkbox
      * @return $this
      */
-    public function addChildren(CheckboxItem $checkbox)
+    public function addChildren($checkbox)
     {
-        parent::addChildren($checkbox);
-        return $this;
+        if($checkbox instanceof CheckboxItem) {
+            return parent::addChildren($checkbox);
+        }
+        throw new UIException("Child of MediaGallery can only be a MediaItem");
     }
 }
