@@ -24,10 +24,6 @@ class Form extends RootComponent
         parent::__construct();
         $this->setType("Form");
         $this->mustHaveChildren();
-        $this->addProps([
-            "data"  => []
-        ]);
-
         return $this;
     }
 
@@ -48,7 +44,7 @@ class Form extends RootComponent
      */
     public function addData($key, $value)
     {
-        $this->addProps(["data" => [$key => $value]]);
+        $this->addProps(["data" => [$key => $value]], true);
         return $this;
     }
 
