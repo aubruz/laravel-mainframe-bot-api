@@ -26,7 +26,8 @@ class Dropdown extends ChildComponent
         $this->setType("Dropdown");
         $this->addProps([
             "id"    => $id,
-            "label"    => $label
+            "label"    => $label,
+            "options"   => []
         ]);
         return $this;
     }
