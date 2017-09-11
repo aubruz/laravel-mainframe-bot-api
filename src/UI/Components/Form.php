@@ -44,7 +44,7 @@ class Form extends RootComponent
      */
     public function addData($key, $value)
     {
-        $this->addProps(["data" => [$key => $value]], true);
+        $this->addProps(["data" => [$key => $value]]);
         return $this;
     }
 
