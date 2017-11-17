@@ -5,7 +5,11 @@
 
 # mainframe-bot-api
 A package to use the mainframe bot api easily
+
 You can find the documentation of the mainframe API [here](http://developer.mainframe.com/?http#mainframe-server-api).
+
+If you find any bug or problem feel free to fork the project and make a PR. Or you can write me an email to 
+[dev@jaquier.co](mailto:dev@jaquier.co).
 
 ## How to install it
 With composer:
@@ -14,13 +18,13 @@ Add `use Aubruz\Mainframe\MainframeClient;` in your project.
 
 ## How to use it
 ### Create client
-``` 
+```
 $mainframeClient = new MainframeClient($botSecret);
 ```
 You can specify the API url if you want to use another one. The default one is "https://api.mainframe.com/bots/v1/".
 ```
 $mainframeClient = new MainframeClient($botSecret, 'https://api-staging.mainframe.com/bots/v1/');
-``` 
+```
 
 ### Send message
 ```
@@ -33,16 +37,16 @@ $mainframeClient->setupSubscription($subscriptionToken, $label);
 ```
 
 ### Edit subscription
-``` 
+```
 $mainframeClient->editSubscription($subscriptionToken, $label);
 ```
 
 ### Delete subscription
-``` 
+```
 $mainframeClient->deleteSubscription($conversationID, $subscriptionID);
 ```
 You can add an optional message to post to the conversation (to explain the reason for removal)
-``` 
+```
 $mainframeClient->deleteSubscription($conversationID, $subscriptionID, $message);
 ```
 
